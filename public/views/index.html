@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="meanApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>MEAN Stack!</title>
+
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/app.module.js"></script>
+    <script src="scripts/people.controller.js"></script>
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="bootstrap">
+
+</head>
+
+<body ng-controller="PeopleController as ctrl">
+
+    <button ng-click="ctrl.listPeople()">Get People</button>
+
+    <ol>
+        <li ng-repeat="person in ctrl.people">
+            <p>Name: {{person.name}}</p>
+            <p>Hometown: {{person.hometown}}</p>
+            <p>Favorite Movie: {{person.favoritemovie}}</p>
+
+        </li>
+    </ol>
+    <div>
+        <label>Name:</label>
+        <input type="text" ng-model="ctrl.name" />
+        <label>Hometown:</label>
+        <input type="text" ng-model="ctrl.hometown" />
+        <label>Favorite Movie:</label>
+        <input type="text" ng-model="ctrl.favoritemovie" />
+        <button ng-click="ctrl.addPerson()">Add Person</button>
+    </div>
+
+</body>
+
+</html>
